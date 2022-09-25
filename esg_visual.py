@@ -57,7 +57,7 @@ def ESG_Calculator(text):
         mydictionary.update(dic_e)
         mydictionary.update(dic_s)
         mydictionary.update(dic_g)
-        return (esg_Diversity,(e_Diversity/len(e)),(s_Diversity/len(s)),(g_Diversity/len(g)), mydictionary)
+        return (esg_Diversity * 1000,(e_Diversity/len(e)) * 1000,(s_Diversity/len(s)) * 1000,(g_Diversity/len(g)) * 1000, mydictionary)
     except Exception as ex:
         print(ex)
         return (0,0,0,0, {})

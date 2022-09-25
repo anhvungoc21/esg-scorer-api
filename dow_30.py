@@ -73,9 +73,9 @@ def getESGScore(ticker):
     
     df['sentiment'] = df.summary.apply(getSentimentScore)
     
-    eScore = df[df['eContent'] == True].sum()['sentiment'] / PAGE_SIZE
-    sScore = df[df['sContent'] == True].sum()['sentiment'] / PAGE_SIZE
-    gScore = df[df['gContent'] == True].sum()['sentiment'] / PAGE_SIZE
+    eScore = df[df['eContent'] == True].sum()['sentiment'] * 1000 / PAGE_SIZE
+    sScore = df[df['sContent'] == True].sum()['sentiment'] * 1000 / PAGE_SIZE
+    gScore = df[df['gContent'] == True].sum()['sentiment'] * 1000 / PAGE_SIZE
     
     return [eScore, sScore, gScore]
 
